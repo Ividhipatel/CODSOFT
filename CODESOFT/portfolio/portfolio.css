@@ -1,0 +1,792 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    color: rgb(234, 228, 228);
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-color);
+    background-size: cover;
+}
+
+:root {
+    --primary-color: rgb(105, 91, 173);
+    --secondary-color: rgb(202, 51, 76);
+    --light-color: white;
+    --dark-color: black;
+}
+
+.dark-theme {
+    --primary-color: rgb(202, 51, 76);
+    --secondary-color: rgb(105, 91, 173);
+    --light-color: black;
+    --dark-color: white;
+}
+
+/*-----------------------------styling for custom scroll-bar -------------------------------------------*/
+
+::-webkit-scrollbar{
+    width: 7px;
+    height: auto;
+}
+
+::-webkit-scrollbar-track{
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+       
+    background: var(--primary-color);
+    border-radius: 15px;
+    transition : all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: var(--secondary-color);
+}
+
+
+
+
+/* --------------------------------------Styling for navigation bar -------------------------------*/
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    background-color: var(--primary-color);
+    position: sticky;
+
+    padding: 10px;
+    width: 100%; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 1000;
+
+}
+
+nav .nav-left {
+    font-size: 30px;
+    margin: 5px 0;
+    color: var(--primary-color);
+     text-transform: uppercase;
+     background-image: linear-gradient(
+       -225deg,
+       #52c432 0%,
+       #f4f4eb 29%,
+       #c106a5 67%,
+       #e4f358 100%);
+     background-size: auto auto;
+     background-clip: border-box;
+     background-size: 200% auto;
+     color: #fff;
+     background-clip: text;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     animation: textclip 3s linear infinite;
+     display: inline-block;
+   } @keyframes textclip {
+     to {
+       background-position: 200% center;
+     }
+   }
+  
+nav ul {
+    display: flex;
+    justify-content: center;
+    text-align: right;
+    align-items: center;
+
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark-color);
+}
+
+nav ul li a:hover {
+    color: var(--light-color);
+    font-size: 1.1rem;
+}
+
+
+/* -------------------------------------------styling for toggle checkbox---------------------------*/
+
+#checkbox {
+    visibility: hidden;
+}
+
+.toggle-btn {
+
+    display: flex;
+    align-items: center;
+}
+
+.toggle-lable {
+    width: 4rem;
+    height: 2rem;
+    background-color: var(--dark-color);
+    display: inline-block;
+    position: relative;
+    border-radius: 10rem;
+}
+
+.toggle-ball {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--light-color);
+    display: inline-block;
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    transition: all .2s linear;
+}
+
+#checkbox:checked+.toggle-lable .toggle-ball {
+    transform: translateX(2rem);
+    background-color: var(--light-color);
+}
+
+/*--------------------------------------Styling for home section---------------------------------*/
+
+.home {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 50px 0;
+}
+
+.home>div {
+    width: 40%;
+}
+
+.home-left {
+    margin: 250px 100px;
+    color: var(--dark-color);
+    font-size: 2rem;
+    padding: auto;
+}
+
+.home-right img {
+    width: 80%;
+    height: auto;
+    margin: 30px 0;
+    border-radius: 170px;
+}
+
+.one {
+    font-size: 20px;
+    font-style: normal;
+    color: var(--dark-color);
+    margin-bottom: 3px;
+
+}
+
+.two {
+    font-size: 30px;
+    font-style: normal;
+    color: var(--dark-color);
+    margin-bottom: 7px;
+    margin-left: 2rem;
+
+}
+
+.two span {
+    font-size: 50px;
+    color: var(--secondary-color);
+
+}
+
+.three {
+    font-size: 30px;
+    font-style: normal;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+    margin-left: 2rem;
+}
+
+#element {
+    color: var(--primary-color);
+    
+}
+
+.hire {
+    width: 100px;
+    padding: 13px;
+    margin: 30px;
+    font-size: 17px;
+    background: var(--primary-color);
+    color: var(--light-color);
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.4s ease;
+    border-radius: 10px;
+    align-items: center;
+    margin-left: 7rem;
+}
+
+.hire:hover {
+    border-color: var(--dark-color);
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+/* ------------------------------------Styling For About Section---------------------------------------*/
+
+.about {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px;
+    
+}
+
+.about-left img {
+    width: 400px;
+    height: auto;
+    transform: translate(50px);
+    border-radius: 310px;
+    border: 0.3rem solid var(--dark-color);
+    margin-top: 70px;
+}
+
+.about-right {
+    justify-content: center;
+    color: var(--dark-color);
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+
+.about-right h1 {
+    color: var(--secondary-color);
+    font-size: 35px;
+    margin-left: 150px;
+    margin-top: 28px;
+    margin-bottom: 50px;
+    text-align: center;
+    text-decoration: underline 3px var(--dark-color);
+}
+
+.about-right h1:hover {
+    color: var(--primary-color);
+    text-decoration: underline var(--light-color);
+    font-size: 42px;
+}
+
+
+.about-right h3 {
+    justify-content: center;
+    margin-top: 60px;
+    font-weight: 100;
+    font-family: 'poppins', sans-serif;
+    font-size: 20px;
+    margin-left: 13rem;
+    color: var(--dark-color);
+    line-height: 30px;
+}
+.about-right a {
+    display: inline-block;
+    text-decoration: none;
+}
+.cv {
+    width: 200px;
+    padding: 13px;
+    margin: 40px;
+    font-size: 20px;
+    background: var(--primary-color);
+    color: var(--light-color);
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.4s ease;
+    border-radius: 10px;
+    align-items: center;
+    margin-left: 28rem;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-decoration: none;
+}
+
+.cv:hover {
+    border-color: var(--dark-color);
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+
+
+/* -- -------------------------------------my skills---------------------------------------*/
+
+.skills {
+    width: 100%;
+    height: 100vh;
+    padding: 0px 13%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+
+.skills-heading {
+    width: 100%;
+    margin-bottom: 100px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.skills-heading h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    color: var(--secondary-color);
+
+}
+
+.skills-heading h1 span {
+    color: var(--primary-color);
+    
+}
+
+.skills-heading h1 span:hover {
+    color: var(--dark-color);
+
+}
+
+
+.skills-heading h3 {
+    font-size: 25px;
+    margin-top: 1rem;
+    color: var(--dark-color);
+}
+
+
+.skills-info {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 30px;
+    grid-column-gap: 50px;
+}
+
+.skills-info .skill-bar .s-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    color: var(--secondary-color);
+}
+
+.skill-bar .s-detail p:nth-child(2) {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.skill-bar .bar {
+    width: 100%;
+    height: 10px;
+    background-color: var(--dark-color);
+    border-radius: 25px;
+    margin-top: 5px;
+    position: relative;
+}
+
+.skill-bar .bar span {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--primary-color);
+    border-radius: 25px;
+}
+
+.skill-bar .bar .html {
+    width: 95%;
+    animation: html 2s;
+}
+
+@keyframes html {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 95%;
+    }
+}
+
+.skill-bar .bar .css {
+    width: 90%;
+    animation: css 2s;
+}
+
+@keyframes css {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 90%;
+    }
+}
+
+.skill-bar .bar .js {
+    width: 85%;
+    animation: js 2s;
+}
+
+@keyframes js {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 85%;
+    }
+}
+
+.skill-bar .bar .php {
+    width: 80%;
+    animation: php 2s;
+}
+
+@keyframes php {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
+
+.skill-bar .bar .react {
+    width: 75%;
+    animation: react 2s;
+}
+
+@keyframes react {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 75%;
+    }
+}
+
+.skill-bar .bar .node {
+    width: 75%;
+    animation: node 2s;
+}
+
+@keyframes node {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 75%;
+    }
+}
+
+.skill-bar .bar .python {
+    width: 70%;
+    animation: python 2s;
+}
+
+@keyframes python {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+.skill-bar .bar .express {
+    width: 60%;
+    animation: express 2s;
+}
+
+@keyframes express {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 60%;
+    }
+}
+
+
+/*------------------------------------------My project--------------------------------*/
+.project{
+    margin-top: 10px 0;
+    padding: 30px;
+}
+.project .pro-title {
+    
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    color: var(--primary-color);
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.project .pro-title span {
+    color: var(--secondary-color);
+}
+
+.project .pro-title span:hover {
+    color: var(--primary-color);
+    
+
+}
+
+.pro-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-bottom: 150px;
+}
+
+.pro-block .pro-box {
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--secondary-color);
+    overflow: hidden;
+    display: flex;
+    margin: 30px;
+    width: 180px;
+    height: 230px;
+    border: solid var(--secondary-color);
+    transition: .5s ease;
+    margin-bottom: 150px;
+
+}
+
+.pro-block .pro-box:hover {
+    border-color: var(--secondary-color);
+    transform: scale(1.2);
+}
+
+.pro-box img {
+    width: 100%;
+    height: 100%;
+}
+
+.pro-box .pro-name {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.01), var(--secondary-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    color: transparent;
+
+}
+
+.pro-box .pro-name:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.01), var(--primary-color));
+
+}
+
+.pro-nmae h4 {
+    font-size: 2rem;
+    color: transparent;
+}
+
+.pro-name h4:hover{
+    color: var(--light-color);
+}
+
+.pro-name a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+}
+
+.pro-name a i {
+    font-size: 2rem;
+    color: var(--dark-color);
+}
+
+
+/* --------------------------------------contact section------------------------------------------- */
+
+.contact {
+    margin-top: 100px;
+    color: var(--dark-color);
+}
+
+.contact h1 {
+    font-size: 30px;
+    text-align: center;
+    color: var(--secondary-color);
+    margin-top: 50px;
+    margin-bottom: 8px;
+
+}
+
+.contact h1:hover {
+    color: var(--dark-color);
+
+}
+
+.contact h1 span {
+    color: var(--primary-color);
+}
+
+.contact h1 span:hover {
+    color: var(--dark-color);
+}
+
+.contact h3 {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contact .c-info {
+    display: flex;
+}
+
+.contact-left {
+    flex-basis: 40%;
+    margin-left: 9rem;
+    margin-top: 30px;
+    font-size: 15px;
+    font-weight: 200;
+}
+
+
+.contact .c-detail h3 {
+    text-align: center;
+    justify-content: center;
+    margin-top: 7px;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+
+}
+
+.contact .contact-left p {
+    margin-top: 20px;
+    font-family: 'poppins', sans-serif;
+    font-size: 20px;
+}
+
+.contact .contact-left p i {
+    color: var(--secondary-color);
+    margin-right: 15px;
+
+}
+
+.c-icon a {
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 15px;
+    color: var(--secondary-color);
+    display: inline-block;
+    transition: transform 0.5s ease;
+    margin-top: 15px;
+
+}
+
+.c-icon a:hover {
+    color: var(--dark-color);
+    transform: translateY(-5px);
+}
+
+.contact-right {
+    flex-basis: 50%;
+    justify-content: center;
+}
+
+.contact-right form {
+    width: 100%;
+    border-radius: 20px;
+    border-color: var(--dark-color);
+}
+
+.contact-right form input {
+    height: 40px;
+    width: 600px;
+    padding: 10px;
+}
+
+.contact-right label {
+    font-size: 15px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact-right form textarea {
+    padding: 10px;
+}
+
+.contact-right label {
+    font-size: 15px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact-right button {
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 25px;
+    font-weight: 400px;
+    background: var(--primary-color);
+    color: var(--light-color);
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+    text-align: center;
+    justify-content: center;
+    margin-left: 10rem;
+}
+
+.contact-right button:hover {
+    border-color: var(--primary-color);
+    background-color: var(--light-color);
+    color: var(--primary-color);
+}
+
+/* ----------------------------------------------Styling For Footer Section-------------------------- */
+
+.footer {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    height: 80px;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.footer:hover {
+    color: var(--light-color);
+}

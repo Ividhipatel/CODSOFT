@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>calculator</title>
+</head>
+<style>
+	*{
+	   padding: 0;
+	   margin: 0;
+	   font-family: 'poppins', sans-serif;
+	}
+	body{
+       font-family: Arial, sans-serif;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 100vh;
+       margin: 0;
+	   background-color: black;
+	
+    }
+	.calculator{
+         width: 520px;
+         height: 600px;
+         background-color: #cebac8;
+         position: absolute;
+         border: 5px double black;
+         border-radius: 5px; 
+		 display: block;	
+  		 margin: 0 auto; 
+		 
+      }
+	  .calculator input[type='text'] {
+         width: 87%;
+         position: relative;
+         height: 80px;
+         top: 20px;
+         text-align: right;
+         padding: 3px 7px;
+		 margin: auto;
+         outline: none;
+         font-size: 40px;
+         border: 5px solid #9a4f85;
+         display: flex;
+         border-radius: 6px;
+         color:black ;
+		 background-color: white;
+      }
+	  .btn input[type='button']{
+         width: 115px;
+         padding: 2px;
+         margin: 2px 2px;
+         position: relative;
+         left: 13px;
+         top: 20px;
+         height: 70px;
+         cursor: pointer;
+         font-size: 20px;
+         transition: 0.5s;
+         background-color: #9a4f85;
+         border-radius: 6px;
+         color: black;
+      }
+      .btn input[type='button']:hover{
+         background-color: white;
+         color:#9a4f85 ;
+		 font-size: 25px;
+      }
+</style>
+<body class="img">
+	<div class="calculator" >
+      <input type="text" id = 'result' placeholder="00">
+      <div class="btn">
+	  <table>
+		<tr>
+         <td><input type="button" value = 'AC' onclick = "Clear()"></td>
+		 <td><input type="button" value = '←' onclick = "Back('←')"></td>
+		 <td><input type="button" value = '%' onclick ="Solve('%')"></td>
+         <td><input type="button" value = '/' onclick = "Solve('/')"></td>
+        </tr>
+		 	<br>
+		<tr>
+		 <td><input type="button" value = '7' onclick = "Solve('7')"></td>
+		 <td><input type="button" value = '8' onclick = "Solve('8')"></td>
+		 <td><input type="button" value = '9' onclick = "Solve('9')"></td>
+		 <td><input type="button" value = 'x' onclick = "Solve('*')"></td>
+        </tr>
+		 	<br>
+		<tr>
+		 <td><input type="button" value = '4' onclick = "Solve('4')"></td>
+		 <td><input type="button" value = '5' onclick = "Solve('5')"></td>
+		 <td><input type="button" value = '6' onclick = "Solve('6')"></td>
+		 <td><input type="button" value = '-' onclick = "Solve('-')"></td>
+        </tr>
+		 	<br>
+		<tr>
+		 <td><input type="button" value = '1' onclick = "Solve('1')"></td>
+		 <td><input type="button" value = '2' onclick = "Solve('2')"></td>
+		 <td><input type="button" value = '3' onclick = "Solve('3')"></td>
+		 <td><input type="button" value = '+' onclick = "Solve('+')"></td>
+        </tr>
+		 	<br>
+		<tr>
+		 <td><input type="button" value = '00'onclick = "Solve('00')"></td>
+		 <td><input type="button" value = '0' onclick = "Solve('0')"></td>
+		 <td><input type="button" value = '.' onclick = "Solve('.')"></td>
+		 <td><input type="button" value = '=' onclick = "Result('=')"></td>
+		</tr>
+	  </table>
+	  </div>
+   </div>
+   <script>
+	function Solve(value) {
+	   var s = document.getElementById('result');
+	   s.value += value;
+	}
+	function Result() {
+	   var num1 = document.getElementById('result').value;
+	   var num2 = eval(num1);
+	   document.getElementById('result').value = num2;
+	}
+	function Clear() {
+	   var c = document.getElementById('result');
+	   c.value = '';
+	}
+	function Back() {
+	   var b = document.getElementById('result');
+	   b.value = b.value.slice(0,-1);
+	}
+ </script>
+</body>
+</html>
